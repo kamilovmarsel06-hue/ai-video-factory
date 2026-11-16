@@ -1,0 +1,127 @@
+
+
+<!DOCTYPE html>
+
+<html  lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#10111b">
+
+<title>AI VIDEO FACTORY</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;background:#10111b;color:white;font-family:Arial,sans-serif;padding:24px}
+
+header{text-align:center;padding:35px 0}
+
+.logo{font-size:38px;font-weight:900;color:#a78bfa}
+
+h1{font-size:27px;margin:12px 0}
+
+p{color:#aaa;line-height:1.5}
+
+.card{background:#1c1e2c;border:1px solid #33354a;border-radius:18px;padding:20px;margin:18px 0}
+
+label{display:block;margin:15px 0 8px;color:#ddd}
+
+textarea,select{width:100%;padding:14px;border-radius:10px;border:1px solid #444;background:#10111b;color:white;font-size:16px}
+
+button{width:100%;padding:16px;background:#8b5cf6;color:white;border:0;border-radius:12px;font-size:16px;font-weight:bold;margin-top:18px}
+
+footer{text-align:center;color:#777;margin-top:35px;font-size:12px}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">AI VIDEO FACTORY</div>
+
+<h1>Создавай видео с помощью ИИ</h1>
+
+<p>Твоя собственная студия AI-видео на iPhone</p>
+
+</header>
+
+<div class="card">
+
+<h2>🎬 Создание видео</h2>
+
+<label>Опиши свою идею</label>
+
+<textarea id="idea" rows="5" placeholder="Например: человек строит подземное убежище в горах..."></textarea>
+
+<label>Формат видео</label>
+
+<select id="format">
+
+<option>9:16 — Shorts / TikTok / Reels</option>
+
+<option>16:9 — YouTube</option>
+
+<option>1:1 — Квадратное видео</option>
+
+</select>
+
+<label>Продолжительность</label>
+
+<select id="duration">
+
+<option>15 секунд</option>
+
+<option>30 секунд</option>
+
+<option>60 секунд</option>
+
+</select>
+
+<button onclick="generate()">Создать сценарий</button>
+
+<div id="result"></div>
+
+</div>
+
+<footer>AI VIDEO FACTORY 2.0 · FREE EDITION</footer>
+
+<script>
+
+function generate(){
+
+const idea=document.getElementById('idea').value.trim();
+
+const format=document.getElementById('format').value;
+
+const duration=document.getElementById('duration').value;
+
+if(!idea){alert('Сначала напиши идею видео');return}
+
+const result=`Идея: ${idea}\nФормат: ${format}\nДлительность: ${duration}\n\nСоздай подробный сценарий с последовательностью сцен, движением камеры и описанием визуального стиля.`;
+
+document.getElementById('result').innerHTML='<p>Сценарий подготовлен!</p><button onclick="copyResult()">📋 Скопировать сценарий</button>';
+
+window.currentResult=result;
+
+}
+
+function copyResult(){
+
+navigator.clipboard.writeText(window.currentResult).then(()=>alert('Скопировано!'));
+
+}
+
+</script>
+
+</body>
+
+</html>
