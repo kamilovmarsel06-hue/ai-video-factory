@@ -1,0 +1,12 @@
+
+{
+  "name": "AI VIDEO FACTORY 2.0",
+  "short_name": "AI VIDEO",
+  "description": "Free AI Video Creation Platform",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#09090f",
+  "theme_color": "#09090f"
+}
