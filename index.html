@@ -106,6 +106,38 @@ footer{text-align:center;color:#777;margin-top:35px;font-size:12px}
 
 <footer>AI VIDEO FACTORY 2.0 · FREE EDITION</footer>
 
+// AI VIDEO FACTORY 2.0 — настройки создания видео
+const videoSettings = {
+    topic: "История",
+    style: "StickToons 3D",
+    language: "Русский",
+    voice: "Мужской",
+    music: true,
+    soundEffects: true
+};
+function updateVideoSettings() {
+    videoSettings.topic = document.getElementById("videoTopic")?.value || "История";
+    videoSettings.style = document.getElementById("videoStyle")?.value || "StickToons 3D";
+    videoSettings.language = document.getElementById("videoLanguage")?.value || "Русский";
+}
+function getVideoPrompt() {
+    updateVideoSettings();
+
+    return `
+Создай полноценное историческое видео.
+Тема: ${videoSettings.topic}
+Визуальный стиль: ${videoSettings.style}
+Язык озвучки: ${videoSettings.language}
+Голос диктора: ${videoSettings.voice}
+
+Используй объёмных 3D-персонажей с большими округлыми головами,
+выразительными лицами и детализированной исторической одеждой.
+Сохраняй одинаковую внешность персонажей во всех сценах.
+Добавь плавную анимацию, подходящую музыку и звуковые эффекты.
+Раздели историю на последовательные сцены.
+Добавь синхронную закадровую озвучку.
+`;
+}
 <script>
 
 function generate(){
